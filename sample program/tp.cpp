@@ -1,17 +1,14 @@
 #include<iostream>
 using namespace std;
-class hello
+#include<stdio.h>
+
+void fun(int i)
 {
-public:
-int i,j;	
-hello()
-{
-i=j=0;
+	if(!i)
+		printf("Inside if");
 }
-
-
-};
 int main()
 {
-hello hobj;
+	fun(1);
+	return 0;
 }

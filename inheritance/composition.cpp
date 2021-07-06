@@ -1,48 +1,51 @@
-// before inheritance composition is used
-// illustrating composition
 #include<iostream>
 using namespace std;
-class demo
+
+class Demo
 {
 	public:
-		int i,j;
-		void fun()
+		int i;
+		int j;
+
+		void Fun()
 		{
-			cout<<"\ninside fun";
+			cout<<"In fun"<<"\n";
 		}
 };
-class hello
+class Hello
 {
 	public:
 		int x,y;
-		demo obj;
-		void gun()
+		Demo obj;
+
+		void Gun()
 		{
-			cout<<"\ninside gun";
+			cout<<"In Gun\n";
 		}
 };
+
 int main()
 {
-	demo dobj;
-	hello hobj;
+	Demo dobj;
+	Hello hobj;
 
-	cout<<sizeof(dobj)<<endl;
+	cout<<"Size of Demo : "<<sizeof dobj<<"\n";
+	cout<<"Size of Hello : "<<sizeof hobj<<"\n";
 
-	cout<<sizeof(hobj)<<endl;
+	dobj.i=11;
+	dobj.j=21;
 
-	dobj.i=20;
-	dobj.j=30;
+	hobj.x=51;
+	hobj.y=101;
 
-	hobj.x=40;
-	hobj.y=11;
+	hobj.obj.i=121;
+	hobj.obj.j=151;
 
-	hobj.obj.i=37;
-	hobj.obj.j=39;
+	dobj.Fun();
+	hobj.Gun();
 
-	dobj.fun();
-	hobj.gun();
-
-	hobj.obj.fun();
-
+	hobj.obj.Fun();
+	cout<<dobj.i<<"\n";
+	cout<<hobj.obj.i<<"\n";
 	return 0;
 }

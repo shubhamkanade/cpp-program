@@ -29,6 +29,8 @@ class derived2:virtual public base
 class demo:public derived1,derived2
 {
 	public:
+		void fun()
+		{}
 };
 int main()
 {

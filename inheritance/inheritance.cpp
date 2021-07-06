@@ -1,41 +1,51 @@
 #include<iostream>
 using namespace std;
-class base
+
+class Demo  //Base class
 {
 	public:
-		int x,y;
-		void fun()
-		{
-			cout<<"\ninside fun";
-		}
+		int i,j;
+
+		void Fun();
 };
-class derived:public base
+void Demo::Fun()
 {
-	public:int i,j;
-	       void gun()
-	       {
-		       cout<<"\ninside gun";
-	       }
+	cout<<"Inside fun\n";
+}
+class Hello:public Demo //Derived class
+{
+	public :
+		int x,y;
+		void Gun();
 };
+void Hello::Gun()
+{
+	cout<<"Inside gun\n";
+}
 int main()
 {
-	base bobj;
-	derived dobj;
+	Demo dobj;
+	Hello hobj;
 
-	cout<<sizeof(bobj)<<endl;
-	cout<<sizeof(dobj)<<endl;
+	cout<<"Size of Demo : "<<sizeof dobj<<"\n";
+	cout<<"Size of Hello : "<<sizeof hobj<<"\n";
 
-	bobj.x=30;
-	bobj.y=29;
+	dobj.i=21;
+	dobj.j=11;
 
-	dobj.i=20;
-	dobj.j=21;
+	hobj.x=51;
+	hobj.y=101;
 
-	dobj.x=23;
-	dobj.y=34;
+	hobj.i=121;
+	hobj.j=151;
 
-	bobj.fun();
-	dobj.gun();
-	dobj.fun();
+	dobj.Fun();
+	hobj.Gun();
+
+	hobj.Fun();
+
+	cout<<" i value is "<<hobj.i<<"\n";
+	cout<<" j value is "<<hobj.j<<"\n";
+
 	return 0;
 }

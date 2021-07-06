@@ -4,11 +4,11 @@ class demo
 {
 	int x;
 	public:
-	int y;
+		int y;
 	protected:
-	int z;
-	void fun();
-	friend void gun();
+		int z;
+		void fun();
+		friend void gun();
 }
 void gun()
 {
